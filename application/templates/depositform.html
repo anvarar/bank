@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+{%include 'nav2.html'%}
+<form id="deposit-form" action="" method="post">
+    {% csrf_token %}
+    <h4 style="text-align: center;">Deposit Form</h4> 
+    <div class="form-group">
+        <label for="exampleInputEmail">Amount</label>
+        <input type="number" name="amount" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter amount" min="0">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Description</label>
+        <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter description">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail">Balance</label>
+        <input type="number" name="amount" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="balance will display automatically when you submit the form" value="{{ total }}" disabled>
+    </div>
+    
+    <input type="submit" class="btn btn-primary">
+</form>
+
+
+{% endblock %}

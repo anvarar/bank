@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+  {% include 'nav2.html' %}
+  <form id="withdrawal-form" action="" method="post">
+    {% csrf_token %}
+    <h4 style="text-align: center;">Withdrawal Form</h4> 
+    {% if error %}
+      <div class="alert alert-danger" role="alert">
+        {{ error }}
+      </div>
+    {% endif %}
+    {% if error1 %}
+    <div class="alert alert-success" role="alert">
+      {{ error1 }}
+    </div>
+  {% endif %}
+    <div class="form-group">
+      <label for="withdrawalAmount">Amount</label>
+      <input type="number" name="amount" class="form-control" id="withdrawalAmount" aria-describedby="withdrawalHelp" placeholder="Enter amount" min="0" step="0.01">
+      <small id="withdrawalHelp" class="form-text text-muted">Enter the amount you wish to withdraw.</small>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Withdraw">
+  </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{%extends 'base.html'%}ā
+{%block 'content'%}
+{%include 'nav2.html'%}
+<form action="" method="post">
+  {%csrf_token%}
+   <h4 style="text-align: center;">Balance Amount</h4>
+   {{form.errors}}
+    <div class="form-group" action="" method="post">
+      <label for="exampleInputEmail">total balance</label>
+      <input type="text" class="form-control" name="username" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" value="{{data}} Rupees" disabled>
+     
+    </div>
+    
+</form>
+{%endblock%}
